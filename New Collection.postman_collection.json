@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://162.55.220.72:5005/get_method?name=Str&age=Str",
+					"raw": "http://162.55.220.72:5005/get_method?name=Olga&age=40",
 					"protocol": "http",
 					"host": [
 						"162",
@@ -26,11 +26,11 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Str"
+							"value": "Olga"
 						},
 						{
 							"key": "age",
-							"value": "Str"
+							"value": "40"
 						}
 					]
 				}
