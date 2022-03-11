@@ -240,9 +240,6 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(400);\r",
-							"});\r",
 							"//Спарсить response body в json.\r",
 							"let jsonData = pm.response.json();\r",
 							"//Спарсить request\r",
@@ -263,6 +260,7 @@
 							"console.log(jsonData.salary[0]);\r",
 							"// Вывести в консоль 1-й элемент параметра salary параметр salary из response.\r",
 							"console.log(jsonData.salary[1]);\r",
+							"console.log(jsonData.salary[2])\r",
 							"//Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)\r",
 							"pm.test(\"0-й элемент параметра salary равен salary из req\", function () {\r",
 							"    pm.expect(jsonData.salary[0]).to.eql(+req.salary)\r",
@@ -280,9 +278,13 @@
 							"pm.environment.set(\"name\", \"jsonData.name\");\r",
 							"// Передать в окружение переменную age\r",
 							"pm.environment.set(\"age\", \"jsonData.age\");\r",
-							"\r",
 							"//Передать в окружение переменную salary\r",
-							"pm.environment.set(\"salary\", \"jsonData.salary\");"
+							"pm.environment.set(\"salary\", \"jsonData.salary\");\r",
+							"//Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.\r",
+							" let salary = jsonData.salary\r",
+							"for (i=0; i < salary.length; i++){\r",
+							"    console.log(\"Salary\" + i + \" : \" +salary[i])\r",
+							"}"
 						],
 						"type": "text/javascript"
 					}
